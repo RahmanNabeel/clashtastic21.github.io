@@ -28,5 +28,5 @@ function draw() {
     redChangeAmount *= -1;
   }
   console.log(redamount);
-  
+
 }
