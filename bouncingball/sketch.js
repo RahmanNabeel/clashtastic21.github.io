@@ -41,7 +41,7 @@ function draw() {
 function moveShape() {
   //move shape
   x+= dx;
-  y+= dy;
+  y+= dy; 
 }
 function displayCircle() {
 //bounce if needed
