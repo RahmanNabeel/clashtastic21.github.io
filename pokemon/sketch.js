@@ -7,9 +7,9 @@
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(250);
+  background(0);
 }
 
 function draw() {
-  imageMode(CENTER)
+  
 }
