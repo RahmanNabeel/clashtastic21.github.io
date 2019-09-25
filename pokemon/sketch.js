@@ -45,6 +45,7 @@ fetchPokemon();
 function setup() {
     song = loadSound('assets/hgsspokemon.mp3');
 }
+
 function keyPressed() {
     if (keyCode === LEFT_ARROW) {
         song.play();
