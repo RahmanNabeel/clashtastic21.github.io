@@ -6,6 +6,7 @@
 // - describe what you did to take this project "above and beyond"
 
 const pokedex = document.getElementById('pokedex');
+let song;
 
 const fetchPokemon = () => {
     const promises = [];
@@ -39,5 +40,15 @@ const displayPokemon = (pokemon) => {
         .join('');
     pokedex.innerHTML = pokemonHTMLString;
 };
+function preLoad() {
+    song = loadSound("pokemon.mp3")
+}
+
+
+function keyPressed() {
+    if (keyCode === LEFT_ARROW) {
+        song.play();
+    }
+}
 
 fetchPokemon();
