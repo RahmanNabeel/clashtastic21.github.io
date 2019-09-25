@@ -40,3 +40,4 @@ const displayPokemon = (pokemon) => {
     pokedex.innerHTML = pokemonHTMLString;
 };
 fetchPokemon();
+
