@@ -7,6 +7,16 @@
 
 const pokedex = document.getElementById('pokedex');
 let song;
+let header;
+
+function preLoad() {
+    song = loadSound('assets/dpmusic.mp3');
+}
+
+function setup() {
+    createCanvas(400, 300);
+    song.play();
+}
 
 const fetchPokemon = () => {
     const promises = [];
@@ -42,12 +52,17 @@ const displayPokemon = (pokemon) => {
 };
 fetchPokemon();
 
+
+
+// function keyPressed() {
+//     if (keyCode === LEFT_ARROW) {
+//         song.play();
+//     }
+// }
+
 function setup() {
-    song = loadSound('assets/hgsspokemon.mp3');
+    header = createElement("h1", "Generation 1 Pokedex");
+    header.mouseOver(newText);
+    header.mouseOut(oldText);
 }
 
-function keyPressed() {
-    if (keyCode === LEFT_ARROW) {
-        song.play();
-    }
-}
