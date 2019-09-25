@@ -7,7 +7,6 @@
 
 const pokedex = document.getElementById('pokedex');
 let song;
-let header;
 
 function preLoad() {
     song = loadSound('assets/dpmusic.mp3');
@@ -52,17 +51,8 @@ const displayPokemon = (pokemon) => {
 };
 fetchPokemon();
 
-
-
 // function keyPressed() {
 //     if (keyCode === LEFT_ARROW) {
 //         song.play();
 //     }
 // }
-
-function setup() {
-    header = createElement("h1", "Generation 1 Pokedex");
-    header.mouseOver(newText);
-    header.mouseOut(oldText);
-}
-
