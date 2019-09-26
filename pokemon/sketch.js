@@ -1,14 +1,18 @@
-// Pokemon Game Project
+// Pokemon
 // Nabeel Rahman
-// Date
+// September 26th, 2019
 //
 // Extra for Experts:
-// - describe what you did to take this project "above and beyond"
+// - For the extra for experts, I have attempted to add music in the website. Although the code seems correct there is something that is wrong which I cannot find.
+// - I have also did some research on the Promise function and used it in the code
+// - CSS and code in the index file was also used to make the website look better
 
+//Global Variables
 const pokedex = document.getElementById('pokedex');
 let song;
 let header;
 
+//Setup
 function setup() {
     createCanvas(400, 400);
     header = createElement("h1", "Generation 1 Pokedex");
@@ -37,8 +41,7 @@ function setup() {
     song.play();
 }
 
-
-
+//Used the Promise function in the code below
 const fetchPokemon = () => {
     const promises = [];
     for (let i = 1; i <= 150; i++) {
@@ -56,6 +59,7 @@ const fetchPokemon = () => {
     });
 };
 
+//Declaring a constant in above and below in the codes
 const displayPokemon = (pokemon) => {
     console.log(pokemon);
     const pokemonHTMLString = pokemon
