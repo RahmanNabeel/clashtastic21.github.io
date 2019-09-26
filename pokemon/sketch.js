@@ -14,20 +14,19 @@ function setup() {
     header = createElement("h1", "Generation 1 Pokedex");
     header.mouseOver(newText);
     header.mouseOut(oldText);
+}
   
-  }
-  
-  function draw() {
+function draw() {
     background(220);
-  }
+}
   
-  function newText() {
+function newText() {
     header.html("Kanto!!");
-  }
+}
   
-  function oldText() {
+function oldText() {
     header.html("Generation 1 pokedex");
-  }
+}
 
 function preLoad() {
     song = loadSound('assets/dpmusic.mp3');
