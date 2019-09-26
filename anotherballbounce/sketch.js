@@ -1,4 +1,4 @@
-// Line Art Demo
+// Another Bouncing Demo
 // Nabeel Rahman
 // Date
 //
