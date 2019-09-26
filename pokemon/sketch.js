@@ -13,9 +13,11 @@ function preLoad() {
 }
 
 function setup() {
-    createCanvas(400, 300);
+    createCanvas(windowWidth, windowHeight);
     song.play();
 }
+
+
 
 const fetchPokemon = () => {
     const promises = [];
@@ -50,9 +52,3 @@ const displayPokemon = (pokemon) => {
     pokedex.innerHTML = pokemonHTMLString;
 };
 fetchPokemon();
-
-// function keyPressed() {
-//     if (keyCode === LEFT_ARROW) {
-//         song.play();
-//     }
-// }
