@@ -15,7 +15,6 @@ let state = 'menu';
 
 function setup() {
 createCanvas(windowWidth, windowHeight);
-
 }
 
 function draw() {
