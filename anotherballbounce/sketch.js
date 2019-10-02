@@ -47,14 +47,14 @@ function draw() {
 function showMenu() {
 //show rectangle button
 rectMode(CENTER);
-fill(255, 0, 0, 125);
+fill(255, 0, 125);
 rect(width/2, height/2 - 100, 400, 150)
 textAlign(CENTER, CENTER);
 textSize(50);
 text("rectangle", width/2, height/2 - 100);
 
 //show circle button
-fill(255, 0, 0, 125);
+fill(255, 0, 125);
 rect(width/2, height/2 - 100, 400, 150)
 fill(0);
 text("circle", width/2, height/2 + 100);
