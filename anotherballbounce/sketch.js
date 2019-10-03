@@ -30,8 +30,6 @@ function draw() {
     checkIfButtonClicked();
   }
 
-  
-  
   if (state === 'circle') {
     moveShape();
     displayCircle();
