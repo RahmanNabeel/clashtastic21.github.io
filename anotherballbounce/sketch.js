@@ -64,6 +64,7 @@ function checkIfButtonClicked() {
     if (mouseX > width/2 - 200 && mouseX < width/2 + 200 && mouseY > height/2 - 100 - 75 && mouseY < height/2 - 100 + 75) {
       state = 'rectangle';
     }
+  }
   if (mouseIsPressed) {
     //check circle button
     if (mouseX > width/2 - 200 && mouseX < width/2 + 200 && mouseY > height/2 + 100 - 75 && mouseY < height/2 + 100 + 75) {
@@ -80,12 +81,11 @@ function moveShape() {
 
 function displayCircle() {
 //bounce if needed
-    if (x > width - radius/2 || x < 0 + radius/2) {
-      dx *= -1; 
-    }
-    if (y > height - radius/2 || y < 0 + radius/2) {
-      dy *= -1;
-    }
+  if (x > width - radius/2 || x < 0 + radius/2) {
+    dx *= -1; 
+  }
+  if (y > height - radius/2 || y < 0 + radius/2) {
+    dy *= -1;
   }
   fill(0)
   circle(x, y, radius);
@@ -99,4 +99,5 @@ function displayRectangle() {
   if (y > height - rectSize/2 || y < 0) {
     dy *= -1;
   }
+}
 }
