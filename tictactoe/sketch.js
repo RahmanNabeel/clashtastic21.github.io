@@ -12,6 +12,7 @@ let dy;
 let radius = 100;
 let rectSize = 100; 
 let state = 'menu';
+let shape = [];
 
 function setup() {
 createCanvas(windowWidth, windowHeight);
@@ -23,6 +24,12 @@ function draw() {
   if (state === 'menu') {
     showMenu();
   }
+  if (state === 'circle') {
+    displayCircle();
+  }
+  if (state === 'rectangle') {
+    displayRectangle();
+  }
 }
 
 function showMenu() {
@@ -33,8 +40,18 @@ function showMenu() {
   textSize(50);
   text("Player vs Player", width/2, height/2 - 100);
 
-  fill(26, 255, 0);
+  fill(255, 0, 255);
   rect(width/2, height/2 - 100, 400, 150)
   fill(0);
   text("Player vs CPU", width/2, height/2 + 100);
+}
+
+function displayRectangle() {
+
+}
+
+function displayCircle() {
+  if (x > width - radius/2 || x < 0 + radius/2) {
+    dx*= -1;
+  }
 }
