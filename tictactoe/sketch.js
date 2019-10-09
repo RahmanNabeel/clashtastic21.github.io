@@ -24,11 +24,17 @@ function draw() {
   if (state === 'menu') {
     showMenu();
   }
-  if (state === 'circle') {
-    displayCircle();
+  if (state === 'gamemode1') {
+    displayGameMode1();
   }
-  if (state === 'rectangle') {
-    displayRectangle();
+  if (state === 'gamemode2') {
+    displayGameMode2();
+  }
+  if (state === 'gamemode3') {
+    displayGameMode3();
+  }
+  if (state === 'gamemode4') {
+    displayGameMode4();
   }
 }
 
@@ -46,11 +52,11 @@ function showMenu() {
   text("Player vs CPU", width/2, height/2 + 100);
 }
 
-function displayRectangle() {
+function displayGameMode1() {
 
 }
 
-function displayCircle() {
+function displayGameMode2() {
   if (x > width - radius/2 || x < 0 + radius/2) {
     dx*= -1;
   }
