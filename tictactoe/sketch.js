@@ -12,10 +12,12 @@ let dy;
 let radius = 100;
 let rectSize = 100; 
 let state = 'menu';
-let shape = [];
 
 function setup() {
-createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, windowHeight);
+
+  x = width/2;
+  y = height/2;
 }
 
 function draw() {
@@ -24,40 +26,19 @@ function draw() {
   if (state === 'menu') {
     showMenu();
   }
-  if (state === 'gamemode1') {
-    displayGameMode1();
-  }
-  if (state === 'gamemode2') {
-    displayGameMode2();
-  }
-  if (state === 'gamemode3') {
-    displayGameMode3();
-  }
-  if (state === 'gamemode4') {
-    displayGameMode4();
-  }
+
 }
 
 function showMenu() {
   rectMode(CENTER);
-  fill(255, 0, 255);
+  fill(255, 0, 125);
   rect(width/2, height/2 - 100, 400, 150)
   textAlign(CENTER, CENTER);
   textSize(50);
-  text("Player vs Player", width/2, height/2 - 100);
+  text("Game 1", width/2, height/2 - 100);
 
-  fill(255, 0, 255);
+  fill(255, 0, 125);
   rect(width/2, height/2 - 100, 400, 150)
   fill(0);
-  text("Player vs CPU", width/2, height/2 + 100);
-}
-
-function displayGameMode1() {
-
-}
-
-function displayGameMode2() {
-  if (x > width - radius/2 || x < 0 + radius/2) {
-    dx*= -1;
-  }
+  text("Game 2", width/2, height/2 + 100);
 }
