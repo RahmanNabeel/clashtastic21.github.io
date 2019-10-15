@@ -40,5 +40,20 @@ function showMenu() {
   fill(255, 0, 125);
   rect(width/2, height/2 - 100, 400, 150)
   fill(0);
-  text("Game 2", width/2, height/2 + 100);
+  text("Game 1", width/2, height/2 - 100);
+}
+
+function checkIfButtonClicked() {
+  if (mouseIsPressed) {
+    //check rectangle button
+    if (mouseX > width/2 - 200 && mouseX < width/2 + 200 && mouseY > height/2 - 100 - 75 && mouseY < height/2 - 100 + 75) {
+      state = 'Game 1';
+    }
+  }
+  if (mouseIsPressed) {
+    //check circle button
+    if (mouseX > width/2 - 200 && mouseX < width/2 + 200 && mouseY > height/2 + 100 - 75 && mouseY < height/2 + 100 + 75) {
+      state = 'Game 1';
+    }
+  }
 }
