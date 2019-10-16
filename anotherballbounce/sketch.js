@@ -9,8 +9,8 @@ let x;
 let y;
 let dx;
 let dy;
-let radius = 100; 
-let rectSize = 100; 
+let radius = 100;
+let rectSize = 100;
 let state = 'menu';
 
 function setup() {
@@ -35,12 +35,11 @@ function draw() {
     displayCircle();
   }
 
-
   else if (state === 'rectangle') {
     moveShape();
-    displayRectangle(); 
+    displayRectangle();
   }
-
+}
 
 function showMenu() {
 //show rectangle button
@@ -99,5 +98,4 @@ function displayRectangle() {
   if (y > height - rectSize/2 || y < 0) {
     dy *= -1;
   }
-}
 }

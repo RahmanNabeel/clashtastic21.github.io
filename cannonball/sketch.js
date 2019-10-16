@@ -1,3 +1,6 @@
+
+
+
 let cannonX;
 let cannonY;
 let cannonWidth;
@@ -42,15 +45,15 @@ function fire() {
     y: cannonY,
     radius: cannonWidth,
     angle: cannonAngle,
-    speed: 5
+    speed: 15
   };
   bullets.push(thisBullet);
 }
 
 function updateBullets() {
   for (let thisBullet of bullets) {
-    thisBullet.x = thisBullet.speed * cos(thisBullet.angle);
-    thisBullet.y = thisBullet.speed * sin(thisBullet.angle);
+    thisBullet.x += thisBullet.speed * cos(thisBullet.angle);
+    thisBullet.y += thisBullet.speed * sin(thisBullet.angle);
     circle(thisBullet.x, thisBullet.y, thisBullet.radius);
   }
 }
