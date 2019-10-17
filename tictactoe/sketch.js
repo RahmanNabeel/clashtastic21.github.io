@@ -29,46 +29,52 @@ function draw() {
     showMenu();
     checkIfButtonClicked();
   }
-  else if (state === "circle") {
+  else if (state === "game1") {
     moveShape();
-    displayCircle();
+    displayGame1();
   }
-  else if (state === "rectangle") {
+  else if (state === "game2") {
     moveShape();
-    displayRectangle();
+    displayGame2();
   }
 }
 
 
 function showMenu() {
-  // show rectangle button
+  // show game1 button
   rectMode(CENTER);
   fill(255, 0, 0, 125);
   rect(width/2, height/2 - 100, 400, 150);
   textAlign(CENTER, CENTER);
   textSize(50);
   fill(0);
-  text("Rectangle", width/2, height/2 - 100);
+  text("game1", width/2, height/2 - 100);
 
-  // show circle button
+  // show game2 button
   fill(255, 0, 0, 125);
   rect(width/2, height/2 + 100, 400, 150);
   fill(0);
-  text("Circle", width/2, height/2 + 100);
+  text("game2", width/2, height/2 + 100);
 }
 
 function checkIfButtonClicked() {
   if (mouseIsPressed) {
-    // check for rectangle button
+    // check for rectang button
     if (mouseX > width/2 - 200 && mouseX < width/2 + 200 &&
         mouseY > height/2 - 100 - 75 && mouseY < height/2 - 100 + 75) {
-          state = "rectangle";
+          state = "game1";
     }
 
     // check for circle button
     if (mouseX > width/2 - 200 && mouseX < width/2 + 200 &&
       mouseY > height/2 + 100 - 75 && mouseY < height/2 + 100 + 75) {
-        state = "circle";
+        state = "game2";
+        push();
+        translate(150, 150);
+        rotate(mouseY);
+        rectMode(CENTER);
+         
+
     }
   }
 }
@@ -84,7 +90,7 @@ function moveShape() {
   y += dy;
 }
 
-function displayCircle() {
+function displayGame2() {
   // bounce if needed
   if (x > width - radius/2 || x < 0 + radius/2) {
     dx *= -1;
@@ -98,7 +104,7 @@ function displayCircle() {
   circle(x, y, radius);
 }
 
-function displayRectangle() {
+function displayGame1() {
   // bounce if needed
   if (x > width - rectSize || x < 0) {
     dx *= -1;
