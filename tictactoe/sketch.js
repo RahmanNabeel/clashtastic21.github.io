@@ -12,6 +12,7 @@ let dy;
 let radius = 100;
 let rectSize = 100;
 let state = "menu";
+let drops = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -39,9 +40,7 @@ function draw() {
   }
 }
 
-
 function showMenu() {
-  // show game1 button
   rectMode(CENTER);
   fill(255, 0, 0, 125);
   rect(width/2, height/2 - 100, 400, 150);
@@ -50,7 +49,6 @@ function showMenu() {
   fill(0);
   text("game1", width/2, height/2 - 100);
 
-  // show game2 button
   fill(255, 0, 0, 125);
   rect(width/2, height/2 + 100, 400, 150);
   fill(0);
@@ -59,22 +57,20 @@ function showMenu() {
 
 function checkIfButtonClicked() {
   if (mouseIsPressed) {
-    // check for rectang button
     if (mouseX > width/2 - 200 && mouseX < width/2 + 200 &&
         mouseY > height/2 - 100 - 75 && mouseY < height/2 - 100 + 75) {
           state = "game1";
     }
 
-    // check for circle button
     if (mouseX > width/2 - 200 && mouseX < width/2 + 200 &&
       mouseY > height/2 + 100 - 75 && mouseY < height/2 + 100 + 75) {
         state = "game2";
         push();
         translate(150, 150);
-        rotate(mouseY);
+        rotate(mouseX);
         rectMode(CENTER);
-         
-
+        rect(0, 0, 50, 50);
+        pop();
     }
   }
 }
@@ -85,13 +81,11 @@ function windowResized() {
 }
 
 function moveShape() {
-  // move
   x += dx;
   y += dy;
 }
 
 function displayGame2() {
-  // bounce if needed
   if (x > width - radius/2 || x < 0 + radius/2) {
     dx *= -1;
   }
@@ -105,7 +99,6 @@ function displayGame2() {
 }
 
 function displayGame1() {
-  // bounce if needed
   if (x > width - rectSize || x < 0) {
     dx *= -1;
   }
