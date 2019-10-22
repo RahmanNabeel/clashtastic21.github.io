@@ -11,11 +11,19 @@ function setup() {
 
 function draw() {
   background(220);
-  for (let i = 0; i < shapes.length; i++) {
-    shapes[i].y += shapes[i].dy;
-
-    fill(shapes[i].color);
-    ellipse(shapes[i].x, shapes[i].y, shapes[i].radius*2, shapes[i].radius*2);
+  for (let i = shapes.length - 1; i > 0; i--) {
+    
+    if(shapes [i].y - shapes[i].radius > height){
+      //delete this...
+      shapes.splice(i, 1);
+    }
+    else{
+      shapes[i].y += shapes[i].dy;
+      
+      noStroke();
+      fill(shapes[i].color);
+      ellipse(shapes[i].x, shapes[i].y, shapes[i].radius*2, shapes[i].radius*2);
+    }
   }
 }
 
