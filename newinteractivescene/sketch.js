@@ -5,6 +5,7 @@
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
 
+let strokeW = 1;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -12,7 +13,10 @@ function setup() {
 }
 
 function draw() {
-  line(mouseX, mouseY, pmouseX, pmouseY);
+  strokeWeight(strokeW);
+  if (mouseIsPressed === true) {
+    line(mouseX, mouseY, pmouseX, pmouseY);
+  }
 }
 
 function keyTyped() {
@@ -32,4 +36,3 @@ function keyTyped() {
     stroke(0, 0, 255);
   }
 }
-
