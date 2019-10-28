@@ -17,13 +17,20 @@ function draw() {
   displayGrid(grid, rows, cols);
 }
 
-function windowResized()
+function windowResized() {
+  if (windowWidth > windowHeight) {
+    createCanvas(windowHeight, windowHeight);
+  }
+  else {
+    createCanvas(windowWidth, windowWidth);
+  }
+}
 
 function keyTyped() {
-  if (key === 'r') {
+  if (key === "r") {
     grid = createRandom2dArray(cols, rows);
   }
-  if (key === 'c') {
+  if (key === "c") {
     for (let x = 0; x < cols; x++) {
       for (let y = 0; y < rows; y++) {
         grid[y][x] = 1;
