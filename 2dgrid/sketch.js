@@ -1,8 +1,8 @@
-// Grid Redux and Conway's game of life
+// Grid Demo & Conway's game of Life
 
 let grid;
-let rows = 30;
-let cols = 30;
+let rows = 50;
+let cols = 50;
 
 function setup() {
   if (windowWidth > windowHeight) {
@@ -104,7 +104,7 @@ function update() {
       }
     }
   }
-  grid = nextTurn;
+  grid = nextTurn; 
 }
 
 function displayGrid(grid, rows, cols) {
