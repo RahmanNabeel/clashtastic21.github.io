@@ -20,10 +20,6 @@ function setup() {
 function draw() {
   background(220);
   displayGrid(grid, rows, cols);
-
-  if ((keyIsDown(UP_ARROW)) && playerY > 0) {
-    playerY -= 1;
-  }
 }
 
 function windowResized() {
@@ -35,27 +31,27 @@ function windowResized() {
   }
 }
 
-// function keyTyped() {
-//   // remove player from current spot
-//   grid[playerY][playerX] = 0;
+function keyTyped() {
+  // remove player from current spot
+  grid[playerY][playerX] = 0;
 
-//   // move the player
-//   if (key === "w" && playerY > 0) {
-//     playerY -= 1;
-//   }
-//   if (key === "s" && playerY < rows - 1) {
-//     playerY += 1;
-//   }
-//   if (key === "d" && playerX < cols - 1) {
-//     playerX += 1;
-//   }
-//   if (key === "a" && playerX > 0) {
-//     playerX -= 1;
-//   }
+  // move the player
+  if (key === "w" && playerY > 0) {
+    playerY -= 1;
+  }
+  if (key === "s" && playerY < rows - 1) {
+    playerY += 1;
+  }
+  if (key === "d" && playerX < cols - 1) {
+    playerX += 1;
+  }
+  if (key === "a" && playerX > 0) {
+    playerX -= 1;
+  }
 
-//   // put player back into grid
-//   grid[playerY][playerX] = 1;
-// }
+  // put player back into grid
+  grid[playerY][playerX] = 1;
+}
 
 function createEmptyGrid() {
   let emptyGrid = [];
