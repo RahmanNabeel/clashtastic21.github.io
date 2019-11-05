@@ -1,10 +1,12 @@
 // WASD in Grid Demo
+// Grid assignment
 
 let grid;
 let rows = 30;
 let cols = 30;
 let playerX = 15;
 let playerY = 15;
+let s = [];
 
 function setup() {
   if (windowWidth > windowHeight) {
@@ -38,6 +40,7 @@ function keyTyped() {
   // move the player
   if (key === "w" && playerY > 0) {
     playerY -= 1;
+    rect(x*cellSize, y*cellSize, cellSize, cellSize);
   }
   if (key === "s" && playerY < rows - 1) {
     playerY += 1;
@@ -62,6 +65,9 @@ function createEmptyGrid() {
     }
   }
   return emptyGrid;
+}
+
+function snake() {
 }
 
 function displayGrid(grid, rows, cols) {
