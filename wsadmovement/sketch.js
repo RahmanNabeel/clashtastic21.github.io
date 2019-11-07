@@ -65,9 +65,6 @@ function createEmptyGrid() {
   return emptyGrid;
 }
 
-function snake() {
-}
-
 function displayGrid(grid, rows, cols) {
   let cellSize = width / cols;
   for (let y = 0; y < rows; y++) {
