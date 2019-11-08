@@ -23,6 +23,14 @@ function draw() {
   displayGrid(grid, rows, cols);
 }
 
+class Snake {
+  constructor(x, y, length) {
+    this.x = x;
+    this.y = y;
+    this.length = 1;
+  }
+}
+
 function windowResized() {
   if (windowWidth > windowHeight) {
     createCanvas(windowHeight, windowHeight);
