@@ -1,9 +1,9 @@
-// Grid Assignment
+// Grid Assignment - Tic Tac Toe
 // Nabeel Rahman
 // Date
 //
 // Extra for Experts:
-
+//  
 
 let board =
   [
@@ -13,8 +13,10 @@ let board =
 ];
 
 let players = ['X', 'O']
-let currentPlayer;
 let available = [];
+let currentPlayer;
+
+
 
 function setup() {
   createCanvas(400, 400);
@@ -25,6 +27,11 @@ function setup() {
     }
   }
 }
+
+
+
+
+
 
 function equals3(a, b, c) {
   return (a==b && b == c && a != '');
