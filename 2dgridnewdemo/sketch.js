@@ -37,6 +37,9 @@ function keyTyped() {
       }
     }
   }
+  if (key === "x") {
+    grid = createRandom2dArray(cols, rows);
+  }
 }
 
 function mousePressed() {
