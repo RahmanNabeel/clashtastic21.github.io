@@ -1,8 +1,17 @@
-let grid;
-let rows = 30;
-let cols = 30;
+// Grid Assignment
+// Nabeel Rahman
+// 11/21/2019
 
+// global variables
+let grid;
+let rows = 40;
+let cols = 40;
+let someTime;
+let lastTimeSwitched = 0;
+
+// setup code
 function setup() {
+  someTime = 5;
   if (windowWidth > windowHeight) {
     createCanvas(windowHeight, windowHeight);
   }
@@ -26,6 +35,7 @@ function windowResized() {
   }
 }
 
+// keys do different things
 function keyTyped() {
   if (key === "r") {
     grid = createRandom2dArray(cols, rows);
@@ -38,11 +48,14 @@ function keyTyped() {
     }
   }
   if (key === "x") {
-    grid = createRandom2dArray(cols, rows);
-    fill(0);
+    if (millis() >= lastTimeSwitched + someTime) {
+      grid = createRandom2dArray(cols, rows);
+      lastTimeSwitched = millis();
+    }
   }
 }
 
+// clicking with the mouse 
 function mousePressed() {
   let cellSize = width/cols;
 
@@ -57,6 +70,7 @@ function mousePressed() {
   }
 }
 
+// grid setup
 function displayGrid(grid, rows, cols) {
   let cellSize = width / cols;
   for (let y = 0; y < rows; y++) {
@@ -72,6 +86,7 @@ function displayGrid(grid, rows, cols) {
   }
 }
 
+// 2d array
 function createRandom2dArray(cols, rows) {
   let randomGrid = [];
   for (let x = 0; x < cols; x++) {
