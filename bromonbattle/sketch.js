@@ -8,10 +8,14 @@
 function setup() {
   createCanvas(3 * (windowWidth/5), (3 * (windowWidth/5))/1.6);
   background(192, 192, 192);
+
+  console.log(windowHeight);
+  console.log(windowWidth);
 }
 
 function draw() {
   displayBattle();
+  displayButtons();
 }
 
 function displayBattle() {
@@ -21,11 +25,14 @@ function displayBattle() {
   strokeWeight(7);
   rect(width/2, 3.6*(height/4), width, height/5);
 
-  line(10, 10, height/50, width);
+  line(550, windowHeight, 550, 480);
 }
 
 function displayButtons() {
 
+  rectMode(CENTER);
+  fill(255);
+  rect(50, 50, 50, 50);
 }
 
 
