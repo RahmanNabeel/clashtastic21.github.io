@@ -15,7 +15,7 @@ function setup() {
 
 function draw() {
   displayBattle();
-  displayButtons();
+  displayWords();
 }
 
 function displayBattle() {
@@ -25,14 +25,21 @@ function displayBattle() {
   strokeWeight(7);
   rect(width/2, 3.6*(height/4), width, height/5);
 
-  line(550, windowHeight, 550, 480);
+  line(550, windowHeight, 550, 410);
 }
 
-function displayButtons() {
+function displayWords() {
+  // fight button
+  fill(0);
+  textAlign(CENTER, CENTER);
+  textSize(30);
+  text("Fight", 3*(width/4), 1.73*(height/2));
 
-  rectMode(CENTER);
-  fill(255);
-  rect(50, 50, 50, 50);
+  // item button
+  textAlign(CENTER, CENTER);
+  textSize(30);
+  text("Item", 2.98*(width/4), 1.9*(height/2)); 
+
 }
 
 
