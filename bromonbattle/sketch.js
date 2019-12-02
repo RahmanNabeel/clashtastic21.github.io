@@ -1,9 +1,11 @@
 // Major Project - Bromons
 // Abrar Zaher and Nabeel Ramen
 //
-// Main code for battle simulator
+// Main code for the battle simulator
 // 
 // 12/30/1867
+
+let state = "menu"
 
 function setup() {
   createCanvas(3 * (windowWidth/5), (3 * (windowWidth/5))/1.6);
@@ -39,6 +41,19 @@ function displayWords() {
   textAlign(CENTER, CENTER);
   textSize(30);
   text("Item", 2.98*(width/4), 1.9*(height/2)); 
+
+  // bromon button
+  textAlign(CENTER, CENTER);
+  textSize(30);
+  text("Bromon", 3.6*(width/4), 1.73*(height/2));
+
+  // run button
+  textAlign(CENTER, CENTER);
+  textSize(30);
+  text("Run", 3.48*(width/4), 1.9*(height/2));
+}
+
+function selectButton() {
 
 }
 
