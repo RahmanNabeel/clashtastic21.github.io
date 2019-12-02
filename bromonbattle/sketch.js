@@ -27,7 +27,7 @@ function displayBattle() {
   strokeWeight(7);
   rect(width/2, 3.6*(height/4), width, height/5);
 
-  line(550, windowHeight, 550, 410);
+  // line(550, 600, 550, 410);
 }
 
 function displayWords() {
@@ -50,7 +50,7 @@ function displayWords() {
   // run button
   textAlign(CENTER, CENTER);
   textSize(30);
-  text("Run", 3.48*(width/4), 1.9*(height/2));
+  text("Run", 3.499*(width/4), 1.9*(height/2));
 }
 
 function selectButton() {
