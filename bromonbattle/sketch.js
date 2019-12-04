@@ -27,7 +27,7 @@ function displayBattle() {
   strokeWeight(7);
   rect(width/2, 3.6*(height/4), width, height/5);
 
-  // line(550, 600, 550, 410);
+  //line(windowWidth/2.5, windowHeight/10, windowWidth/2.5, windowHeight/10);
 }
 
 function displayWords() {
