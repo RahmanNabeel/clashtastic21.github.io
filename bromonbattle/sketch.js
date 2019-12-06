@@ -8,11 +8,6 @@
 // states for the different options
 let state = "menu"
 
-let wordFill1 = 90;
-let wordFill2 = 0;
-let wordFill3 = 0; 
-let wordFill4 = 0;
-
 function setup() {
 
   createCanvas(3 * (windowWidth/5), (3 * (windowWidth/5))/1.6);
@@ -48,25 +43,25 @@ function displayBattle() {
 function displayWords() {
   
   // fight button
-  fill(wordFill1);
+  fill(0);
   textAlign(CENTER, CENTER);
   textSize(35);
   text("Fight", 3*(width/4), 1.73*(height/2));
 
   // item button
-  fill(wordFill2);
+  fill(0);
   textAlign(CENTER, CENTER);
   textSize(35);
   text("Item", 2.98*(width/4), 1.9*(height/2)); 
 
   // bromon button
-  fill(wordFill3);
+  fill(0);
   textAlign(CENTER, CENTER);
   textSize(35);
   text("Bromon", 3.6*(width/4), 1.73*(height/2));
 
   // run button
-  fill(wordFill4);
+  fill(0);
   textAlign(CENTER, CENTER);
   textSize(35);
   text("Run", 3.499*(width/4), 1.9*(height/2));
