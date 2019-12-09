@@ -5,9 +5,10 @@
 // 
 // 12/30/1867
 
-// states for the different options
 
+// states for the different options
 let state = "menu"
+
 
 function setup() {
 
@@ -19,12 +20,19 @@ function setup() {
 }
 
 function draw() {
-
   // border at the bottom
   displayBattle();
-  pickOption();
   
   if (state === "menu") {
+    fightOptionBorder();
+    displayWords();
+  }
+  if (state === "bordermove") {
+    bromonOptionBorder();
+    displayWords();
+  }
+  if (state === "bordermove2") {
+    itemOptionBorder();
     displayWords();
   }
 }
@@ -38,7 +46,7 @@ function displayBattle() {
   stroke("black");
   rect(width/2, 3.6*(height/4), width, height/5);
   
-  if (state === "menu") {
+  if (state === "menu" || state === "bordermove" || state === "bordermove2") {
     line(2*(width/3.1), 2*(height/2), 2*(width/3.1), 2*(height/2.5));
   }
 }
@@ -52,17 +60,18 @@ function displayWords() {
   textSize(35);
   text("Fight", 3*(width/4), 1.73*(height/2));
 
+  // bromon button
+  fill(0);
+  textAlign(CENTER, CENTER);
+  textSize(35);
+  text("Bromon", 3.6*(width/4), 1.73*(height/2));
+
   // item button
   fill(0);
   textAlign(CENTER, CENTER);
   textSize(35);
   text("Item", 2.98*(width/4), 1.9*(height/2)); 
 
-  // bromon button
-  fill(0);
-  textAlign(CENTER, CENTER);
-  textSize(35);
-  text("Bromon", 3.6*(width/4), 1.73*(height/2));
 
   // run button
   fill(0);
@@ -71,12 +80,40 @@ function displayWords() {
   text("Run", 3.499*(width/4), 1.9*(height/2));
 }
 
-function pickOption() {
+function fightOptionBorder() {
   noFill();
   stroke("red");
   strokeWeight(2);
   rect(3*(width/4), 1.73*(height/2), 100, 40);
 }
+
+function bromonOptionBorder() {
+  noFill();
+  stroke("red");
+  strokeWeight(2);
+  rect(3.6*(width/4), 1.73*(height/2), 140, 40);
+}
+
+function itemOptionBorder() {
+  noFill();
+  stroke("red");
+  strokeWeight(2);
+  rect(2.98*(width/4), 1.9*(height/2), 100, 40);
+}
+
+function keyPressed(){
+  if (keyCode === RIGHT_ARROW) {
+    state = "bordermove";
+  }
+  if (keyCode === DOWN_ARROW && state === "menu") {
+    state = "bordermove2"
+  }
+}
+
+
+
+
+
 
 // function textBox(theText) {
 //   fill(255);
