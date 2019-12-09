@@ -6,6 +6,7 @@
 // 12/30/1867
 
 // states for the different options
+
 let state = "menu"
 
 function setup() {
@@ -21,6 +22,7 @@ function draw() {
 
   // border at the bottom
   displayBattle();
+  pickOption();
   
   if (state === "menu") {
     displayWords();
@@ -33,6 +35,7 @@ function displayBattle() {
   rectMode(CENTER);
   fill(255);
   strokeWeight(7);
+  stroke("black");
   rect(width/2, 3.6*(height/4), width, height/5);
   
   if (state === "menu") {
@@ -44,6 +47,7 @@ function displayWords() {
   
   // fight button
   fill(0);
+  stroke("black");
   textAlign(CENTER, CENTER);
   textSize(35);
   text("Fight", 3*(width/4), 1.73*(height/2));
@@ -68,7 +72,10 @@ function displayWords() {
 }
 
 function pickOption() {
-
+  noFill();
+  stroke("red");
+  strokeWeight(2);
+  rect(3*(width/4), 1.73*(height/2), 100, 40);
 }
 
 // function textBox(theText) {
