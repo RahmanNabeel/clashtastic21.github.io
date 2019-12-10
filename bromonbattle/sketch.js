@@ -35,6 +35,10 @@ function draw() {
     itemOptionBorder();
     displayWords();
   }
+  if(state === "bordermove4") {
+    runOptionBorder();
+    displayWords();
+  }
 }
 
 function displayBattle() {
@@ -84,30 +88,44 @@ function fightOptionBorder() {
   noFill();
   stroke("red");
   strokeWeight(2);
-  rect(3*(width/4), 1.73*(height/2), 100, 40);
+  rect(3*(width/4), 1.73*(height/2), 100, 40, 10);
 }
 
 function bromonOptionBorder() {
   noFill();
   stroke("red");
   strokeWeight(2);
-  rect(3.6*(width/4), 1.73*(height/2), 140, 40);
+  rect(3.6*(width/4), 1.73*(height/2), 140, 40, 10);
 }
 
 function itemOptionBorder() {
   noFill();
   stroke("red");
   strokeWeight(2);
-  rect(2.98*(width/4), 1.9*(height/2), 100, 40);
+  rect(2.98*(width/4), 1.9*(height/2), 100, 40, 10);
+}
+
+function runOptionBorder() {
+  noFill();
+  stroke("red");
+  strokeWeight(2);
+  rect(3.499*(width/4), 1.9*(height/2), 100, 40, 10);
 }
 
 function keyPressed(){
   if (keyCode === RIGHT_ARROW) {
     state = "bordermove";
   }
-  if (keyCode === DOWN_ARROW && state === "menu") {
-    state = "bordermove2"
+  if (keyCode === LEFT_ARROW && state === "bordermove") {
+    state = "menu";
   }
+  if (keyCode === DOWN_ARROW && state === "menu") {
+    state = "bordermove2";
+  }
+  if (keyCode === UP_ARROW  && state === "bordermove2") {
+    state = "menu";
+  }
+  // if (keyCode === DOWN_ARROW)
 }
 
 
