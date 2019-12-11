@@ -1,6 +1,6 @@
 // Major Project - Bromons
 // Abrar Zaher and Nabeel Ramen
-//
+// 
 // Main code for the battle simulator
 // 
 // 12/30/1867
@@ -22,6 +22,7 @@ function setup() {
 function draw() {
   // border at the bottom
   displayBattle();
+  displayBattleStats();
   
   if (state === "menu") {
     fightOptionBorder();
@@ -77,7 +78,6 @@ function displayWords() {
   textAlign(CENTER, CENTER);
   textSize(35);
   text("Item", 2.98*(width/4), 1.9*(height/2)); 
-
 
   // run button
   fill(0);
@@ -143,7 +143,10 @@ function keyPressed(){
     state = "insidebattle";
   }
   if (key === " " && state === "bordermove") {
-    state = "insidebattle"
+    state = "insidebattle";
+  }
+  if (key === " " && state === "bordermove2") {
+    state = "insidebattle";
   }
 }
 
@@ -161,7 +164,16 @@ function insideBattle() {
   rect(width/2, 3.6*(height/4), width, height/5);
 }
 
+function displayBattleStats() {
+  // HP bars
+  rectMode(CENTER);
+  noFill();
+  strokeWeight(2.5);
+  stroke("black");
+  rect(1.7*(width/2), 2.5*(height/4), 150, 13);
+  rect(0.3*(width/2), 0.3*(height/2), 150, 13);
 
+}
 
 
 
