@@ -39,10 +39,12 @@ function draw() {
     runOptionBorder();
     displayWords();
   }
+  if (state === "insidebattle") {
+    insideBattle();
+  }
 }
 
 function displayBattle() {
-
   // bottom display
   rectMode(CENTER);
   fill(255);
@@ -50,13 +52,13 @@ function displayBattle() {
   stroke("black");
   rect(width/2, 3.6*(height/4), width, height/5);
   
-  if (state === "menu" || state === "bordermove" || state === "bordermove2") {
+  if (state === "menu" || state === "bordermove" || state === "bordermove2" || 
+      state === "bordermove3" || state === "bordermove4") {
     line(2*(width/3.1), 2*(height/2), 2*(width/3.1), 2*(height/2.5));
   }
 }
 
 function displayWords() {
-  
   // fight button
   fill(0);
   stroke("black");
@@ -113,7 +115,7 @@ function runOptionBorder() {
 }
 
 function keyPressed(){
-  if (keyCode === RIGHT_ARROW) {
+  if (keyCode === RIGHT_ARROW && state === "menu") {
     state = "bordermove";
   }
   if (keyCode === LEFT_ARROW && state === "bordermove") {
@@ -125,7 +127,38 @@ function keyPressed(){
   if (keyCode === UP_ARROW  && state === "bordermove2") {
     state = "menu";
   }
-  // if (keyCode === DOWN_ARROW)
+  if (keyCode === DOWN_ARROW && state === "bordermove") {
+    state = "bordermove4";
+  }
+  if (keyCode === UP_ARROW && state === "bordermove4") {
+    state = "bordermove";
+  }
+  if (keyCode === LEFT_ARROW && state === "bordermove4") {
+    state = "bordermove2";
+  }
+  if (keyCode === RIGHT_ARROW && state === "bordermove2") {
+    state = "bordermove4";
+  }
+  if (key === " " && state === "menu") {
+    state = "insidebattle";
+  }
+  if (key === " " && state === "bordermove") {
+    state = "insidebattle"
+  }
+}
+
+function keyTyped() {
+  if (key === "b" && state === "insidebattle") {
+    state = "menu";
+  }
+}
+
+function insideBattle() {
+  rectMode(CENTER);
+  fill(255);
+  strokeWeight(7);
+  stroke("black");
+  rect(width/2, 3.6*(height/4), width, height/5);
 }
 
 
