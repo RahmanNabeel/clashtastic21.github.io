@@ -42,6 +42,7 @@ function draw() {
   }
   if (state === "insidebattle") {
     insideBattle();
+    // May need to make one for each option
   }
 }
 
@@ -173,8 +174,25 @@ function displayBattleStats() {
   rect(1.7*(width/2), 2.5*(height/4), 150, 13);
   rect(0.3*(width/2), 0.3*(height/2), 150, 13);
 
+  textAlign(CENTER, CENTER);
+  textSize(19);
+  text("H P", 1.49*(width/2), 2.5*(height/4));
+  text("H P", 0.09*(width/2), 0.3*(height/2));
+
+
+
+  // Pokemon names
+  // text("H P", 1.6*(width/2), 2*(height/4));
+  // text("H P", 0.25*(width/2), 0.07*(height/2));
 }
 
+
+// class for the pokemon
+class Pokemon {
+  constructor() {
+
+  }
+}
 
 
 
