@@ -149,6 +149,9 @@ function keyPressed(){
   if (key === " " && state === "bordermove2") {
     state = "insidebattle";
   }
+  if (key === " " && state === "bordermove4") {
+    // return to overworld/cannot run if against trainer
+  }
 }
 
 function keyTyped() {
@@ -169,7 +172,7 @@ function displayBattleStats() {
   // HP bars
   rectMode(CENTER);
   noFill();
-  strokeWeight(2.5);
+  strokeWeight(2.3);
   stroke("black");
   rect(1.7*(width/2), 2.5*(height/4), 150, 13);
   rect(0.3*(width/2), 0.3*(height/2), 150, 13);
@@ -180,18 +183,23 @@ function displayBattleStats() {
   text("H P", 0.09*(width/2), 0.3*(height/2));
 
 
-
   // Pokemon names
-  // text("H P", 1.6*(width/2), 2*(height/4));
-  // text("H P", 0.25*(width/2), 0.07*(height/2));
+  // text("bromon", 1.6*(width/2), 2*(height/4));
+  // text("bromon", 0.25*(width/2), 0.07*(height/2));
 }
 
 
 // class for the pokemon
 class Pokemon {
-  constructor() {
-
+  // stats, level, type(need to have)
+  constructor(name, sprite, moves, health) {
+    this.name = name;
+    this.sprite = sprite;
+    this.moves = moves;
+    this.health = health;
   }
+
+
 }
 
 
