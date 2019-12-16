@@ -8,6 +8,7 @@
 
 // states for the different options
 let state = "menu"
+let bromon;
 
 
 function setup() {
@@ -19,11 +20,21 @@ function setup() {
   console.log(windowWidth);
 }
 
+// loads the sprites
+// function preload() {
+//   bromon = loadImage("assets/")
+// }
+
 function draw() {
   // border at the bottom
   displayBattle();
   displayBattleStats();
-  
+
+  // position of Bromon in battle
+  rectMode(CENTER);
+  rect(1.5*(width/2), 1.09*(height/4), 250, 210);
+  rect(0.45*(width/2), 1.21*(height/2), 250, 210);
+
   if (state === "menu") {
     fightOptionBorder();
     displayWords();
@@ -190,7 +201,8 @@ function displayBattleStats() {
 
 
 // class for the pokemon
-class Pokemon {
+class Bromon {
+
   // stats, level, type(need to have)
   constructor(name, sprite, moves, health) {
     this.name = name;
@@ -199,7 +211,14 @@ class Pokemon {
     this.health = health;
   }
 
+  displayEnemyFrontSprite() {
+    imageMode(CENTER);
+    image(bromon)
+  }
 
+  displayYourBackSprite() {
+
+  }
 }
 
 
