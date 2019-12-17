@@ -9,6 +9,7 @@
 // states for the different options
 let state = "menu"
 let bromon;
+let pokeName;
 
 
 function setup() {
@@ -18,9 +19,13 @@ function setup() {
   
   console.log(windowHeight);
   console.log(windowWidth);
+
+  // test sprite
+  img = loadImage('assets/bulbasaurtest.png');
+
 }
 
-// loads the sprites
+// loads sprites
 // function preload() {
 //   bromon = loadImage("assets/")
 // }
@@ -32,8 +37,13 @@ function draw() {
 
   // position of Bromon in battle
   rectMode(CENTER);
-  rect(1.5*(width/2), 1.09*(height/4), 250, 210);
-  rect(0.45*(width/2), 1.21*(height/2), 250, 210);
+  rect(1.4*(width/2), 1.07*(height/4), 250, 210); // enemy sprite
+  rect(0.45*(width/2), 1.21*(height/2), 250, 210); // your sprite
+
+  // test sprites
+  imageMode(CENTER);
+  image(img, 1.4*(width/2), 1.07*(height/4), 130, 100);
+
 
   if (state === "menu") {
     fightOptionBorder();
@@ -211,13 +221,16 @@ class Bromon {
     this.health = health;
   }
 
+
+
   displayEnemyFrontSprite() {
     imageMode(CENTER);
-    image(bromon)
+    image(bromon, 1.5*(width/2), 1.09*(height/4), 250, 210);
   }
 
   displayYourBackSprite() {
-
+    imageMode(CENTER);
+    
   }
 }
 
@@ -230,5 +243,4 @@ class Bromon {
 //   fill(0);
 //   textSize(20);
 //   text(theText, width * 0.05, 3 * (height/4) + height * 0.03, width - width * 0.05, height/4)
-//   strokeWeight(4);
 // }
