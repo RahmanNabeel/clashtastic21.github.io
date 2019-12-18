@@ -21,8 +21,8 @@ function setup() {
   console.log(windowWidth);
 
   // test sprite
-  img = loadImage('assets/bulbasaurtest.png');
-
+  img = loadImage('assets/bulbasaurtest.png'); // bulbasaur
+  img2 = loadImage('assets/zamazentatest.png'); // zamazenta 
 }
 
 // loads sprites
@@ -37,13 +37,13 @@ function draw() {
 
   // position of Bromon in battle
   rectMode(CENTER);
-  rect(1.4*(width/2), 1.07*(height/4), 250, 210); // enemy sprite
-  rect(0.45*(width/2), 1.21*(height/2), 250, 210); // your sprite
+  // rect(1.4*(width/2), 1.07*(height/4), 250, 210); // enemy sprite
+  // rect(0.45*(width/2), 1.21*(height/2), 250, 210); // your sprite
 
   // test sprites
   imageMode(CENTER);
-  image(img, 1.4*(width/2), 1.07*(height/4), 130, 100);
-
+  image(img, 1.4*(width/2), 1.07*(height/4), 130, 100); // bulbasaur 
+  image(img2,0.45*(width/2), 1.21*(height/2), 250, 195); // zamazenta
 
   if (state === "menu") {
     fightOptionBorder();
@@ -57,13 +57,18 @@ function draw() {
     itemOptionBorder();
     displayWords();
   }
-  if(state === "bordermove4") {
+  if (state === "bordermove4") {
     runOptionBorder();
     displayWords();
   }
   if (state === "insidebattle") {
     insideBattle();
-    // May need to make one for each option
+  }
+  if (state === "insidebromon") {
+    insideBromon();
+  }
+  if (state === "insideitem") {
+    insideItem();
   }
 }
 
@@ -165,10 +170,10 @@ function keyPressed(){
     state = "insidebattle";
   }
   if (key === " " && state === "bordermove") {
-    state = "insidebattle";
+    state = "insidebromon";
   }
   if (key === " " && state === "bordermove2") {
-    state = "insidebattle";
+    state = "insideitem";
   }
   if (key === " " && state === "bordermove4") {
     // return to overworld/cannot run if against trainer
@@ -176,12 +181,28 @@ function keyPressed(){
 }
 
 function keyTyped() {
-  if (key === "b" && state === "insidebattle") {
+  if (key === "b" && state === "insidebattle" || state === "insidebromon" || state === "insideitem") {
     state = "menu";
   }
 }
 
 function insideBattle() {
+  rectMode(CENTER);
+  fill(255);
+  strokeWeight(7);
+  stroke("black");
+  rect(width/2, 3.6*(height/4), width, height/5);
+}
+
+function insideBromon() {
+  rectMode(CENTER);
+  fill(255);
+  strokeWeight(7);
+  stroke("black");
+  rect(width/2, 3.6*(height/4), width, height/5);
+}
+
+function insideItem() {
   rectMode(CENTER);
   fill(255);
   strokeWeight(7);
@@ -214,7 +235,7 @@ function displayBattleStats() {
 class Bromon {
 
   // stats, level, type(need to have)
-  constructor(name, sprite, moves, health) {
+  constructor(name, sprite, moves, health, size) {
     this.name = name;
     this.sprite = sprite;
     this.moves = moves;
