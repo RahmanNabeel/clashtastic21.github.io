@@ -43,7 +43,7 @@ function draw() {
   // test sprites
   imageMode(CENTER);
   image(img, 1.4*(width/2), 1.07*(height/4), 130, 100); // bulbasaur 
-  image(img2,0.45*(width/2), 1.21*(height/2), 250, 195); // zamazenta
+  image(img2, 0.45*(width/2), 1.21*(height/2), 250, 195); // zamazenta
 
   if (state === "menu") {
     fightOptionBorder();
@@ -226,8 +226,8 @@ function displayBattleStats() {
 
 
   // Pokemon names
-  // text("bromon", 1.6*(width/2), 2*(height/4));
-  // text("bromon", 0.25*(width/2), 0.07*(height/2));
+  //text("bromon", 1.6*(width/2), 2*(height/4));
+  //text("bromon", 0.25*(width/2), 0.07*(height/2));
 }
 
 
@@ -240,8 +240,8 @@ class Bromon {
     this.sprite = sprite;
     this.moves = moves;
     this.health = health;
+    this.size = size;
   }
-
 
 
   displayEnemyFrontSprite() {
@@ -251,17 +251,16 @@ class Bromon {
 
   displayYourBackSprite() {
     imageMode(CENTER);
-    
   }
 }
 
 
-
-// function textBox(theText) {
-//   fill(255);
-//   rect(width * 0.01, 3 * (height/4) - height * 0.01, width - width * 0.02, height/4, 20);
+// text box
+function textBox(theText) {
+  fill(255);
+  rect(width * 0.01, 3 * (height/4) - height * 0.01, width - width * 0.02, height/4, 20);
   
-//   fill(0);
-//   textSize(20);
-//   text(theText, width * 0.05, 3 * (height/4) + height * 0.03, width - width * 0.05, height/4)
-// }
+  fill(0);
+  textSize(20);
+  text(theText, width * 0.05, 3 * (height/4) + height * 0.03, width - width * 0.05, height/4)
+}
