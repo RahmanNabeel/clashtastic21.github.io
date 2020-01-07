@@ -170,10 +170,10 @@ function keyPressed(){
     state = "insidebattle";
   }
   if (key === " " && state === "bordermove") {
-    state = "insidebromon";
+    state = "insidebattle";
   }
   if (key === " " && state === "bordermove2") {
-    state = "insideitem";
+    state = "insidebattle";
   }
   if (key === " " && state === "bordermove4") {
     // return to overworld/cannot run if against trainer
@@ -181,7 +181,7 @@ function keyPressed(){
 }
 
 function keyTyped() {
-  if (key === "b" && state === "insidebattle" || state === "insidebromon" || state === "insideitem") {
+  if (key === "b" && state === "insidebattle") {
     state = "menu";
   }
 }
@@ -259,6 +259,15 @@ class Bromon {
 function textBox(theText) {
   fill(255);
   rect(width * 0.01, 3 * (height/4) - height * 0.01, width - width * 0.02, height/4, 20);
+  
+  fill(0);
+  textSize(20);
+  text(theText, width * 0.05, 3 * (height/4) + height * 0.03, width - width * 0.05, height/4)
+}
+
+function textBox2(theText) {
+  fill(255);
+  rect(width * 0.03, 3 * (height/4) - height * 0.03, width - width * 0.02, height/4, 20);
   
   fill(0);
   textSize(20);
