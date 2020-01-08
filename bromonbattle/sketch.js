@@ -25,6 +25,10 @@ function setup() {
   img2 = loadImage('assets/zamazenta_back.png'); // zamazenta 
 }
 
+function preload() {
+
+}
+
 // loads sprites
 // function preload() {
 //   bromon = loadImage("assets/")
@@ -271,5 +275,5 @@ function textBox2(theText) {
   
   fill(0);
   textSize(20);
-  text(theText, width * 0.05, 3 * (height/4) + height * 0.03, width - width * 0.05, height/4)
+  text(theText, width * 0.09, 3 * (height/4) + height * 0.13, width - width * 0.15, height/3)
 }
