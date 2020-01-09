@@ -25,10 +25,6 @@ function setup() {
   img2 = loadImage('assets/zamazenta_back.png'); // zamazenta 
 }
 
-function preload() {
-
-}
-
 // loads sprites
 // function preload() {
 //   bromon = loadImage("assets/")
@@ -255,6 +251,7 @@ class Bromon {
 
   displayYourBackSprite() {
     imageMode(CENTER);
+    image(bromon, 0.45*(width/2), 1.21*(height/2), 250, 210); 
   }
 }
 
