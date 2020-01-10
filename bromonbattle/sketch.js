@@ -271,6 +271,6 @@ function textBox2(theText) {
   rect(width * 0.03, 3 * (height/4) - height * 0.03, width - width * 0.02, height/4, 20);
   
   fill(0);
-  textSize(20);
+  textSize(40);
   text(theText, width * 0.09, 3 * (height/4) + height * 0.13, width - width * 0.15, height/3)
 }
