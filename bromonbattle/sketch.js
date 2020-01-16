@@ -21,8 +21,8 @@ function setup() {
   console.log(windowWidth);
 
   // test sprite
-  img = loadImage('assets/bulbasaur_front.png'); // bulbasaur
-  img2 = loadImage('assets/zamazenta_back.png'); // zamazenta 
+  //img = loadImage('assets/bulbasaur_front.png'); // bulbasaur
+  //img2 = loadImage('assets/zamazenta_back.png'); // zamazenta 
 }
 
 // loads sprites
