@@ -16,13 +16,13 @@ function setup() {
 
   createCanvas(3 * (windowWidth/5), (3 * (windowWidth/5))/1.6);
   background(192, 192, 192);
-  
+
   console.log(windowHeight);
   console.log(windowWidth);
 
   // test sprite
   img = loadImage('assets/bulbasaur_front.png'); // bulbasaur
-  img2 = loadImage('assets/zamazenta_back.png'); // zamazenta 
+  img2 = loadImage('assets/zamazenta_back.png'); // zamazenta
 }
 
 // loads sprites
