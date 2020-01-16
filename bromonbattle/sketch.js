@@ -21,8 +21,8 @@ function setup() {
   console.log(windowWidth);
 
   // test sprite
-  //img = loadImage('assets/bulbasaur_front.png'); // bulbasaur
-  //img2 = loadImage('assets/zamazenta_back.png'); // zamazenta 
+  img = loadImage('assets/bulbasaur_front.png'); // bulbasaur
+  img2 = loadImage('assets/zamazenta_back.png'); // zamazenta 
 }
 
 // loads sprites
@@ -42,8 +42,8 @@ function draw() {
 
   // test sprites
   imageMode(CENTER);
-  image(img, 1.4*(width/2), 1.07*(height/4), 130, 100); // bulbasaur 
-  image(img2, 0.45*(width/2), 1.21*(height/2), 250, 195); // zamazenta
+  //image(img, 1.4*(width/2), 1.07*(height/4), 130, 100); // bulbasaur 
+  //image(img2, 0.45*(width/2), 1.21*(height/2), 250, 195); // zamazenta
 
   if (state === "menu") {
     fightOptionBorder();
