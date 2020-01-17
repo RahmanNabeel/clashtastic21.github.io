@@ -25,15 +25,15 @@ function setup() {
   img2 = loadImage('assets/zamazenta_back.png'); // zamazenta
 }
 
+function preload()
+
 // loads sprites
 // function preload() {
 //   bromon = loadImage("assets/")
 // }
 
 function draw() {
-  // border at the bottom
-  displayBattle();
-  displayBattleStats();
+  loadBackGround();
 
   // position of Bromon in battle
   rectMode(CENTER);
@@ -70,6 +70,12 @@ function draw() {
   if (state === "insideitem") {
     insideItem();
   }
+}
+
+function loadBackGround() {
+  // border at the bottom
+  displayBattle();
+  displayBattleStats();
 }
 
 function displayBattle() {
@@ -249,10 +255,13 @@ class Bromon {
     image(bromon, 1.5*(width/2), 1.09*(height/4), 250, 210);
   }
 
+
   displayYourBackSprite() {
     imageMode(CENTER);
     image(bromon, 0.45*(width/2), 1.21*(height/2), 250, 210); 
   }
+
+
 }
 
 
@@ -264,13 +273,4 @@ function textBox(theText) {
   fill(0);
   textSize(20);
   text(theText, width * 0.05, 3 * (height/4) + height * 0.03, width - width * 0.05, height/4)
-}
-
-function textBox2(theText) {
-  fill(255);
-  rect(width * 0.03, 3 * (height/4) - height * 0.03, width - width * 0.02, height/4, 20);
-  
-  fill(0);
-  textSize(40);
-  text(theText, width * 0.09, 3 * (height/4) + height * 0.13, width - width * 0.15, height/3)
 }
