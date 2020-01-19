@@ -20,17 +20,54 @@ function setup() {
   console.log(windowHeight);
   console.log(windowWidth);
 
-  // test sprite
-  img = loadImage('assets/bulbasaur_front.png'); // bulbasaur
-  img2 = loadImage('assets/zamazenta_back.png'); // zamazenta
+
 }
 
-function preload()
+// Load sprites
+function preload(){
+  // test sprite
+  bulb_front = loadImage('assets/bulbasaur_front.png'); // bulbasaur
+  zama_back = loadImage('assets/zamazenta_back.png'); // zamazenta
 
-// loads sprites
-// function preload() {
-//   bromon = loadImage("assets/")
-// }
+  bulb_back = loadImage('assets/bulbasaur_back.png');
+  zama_front = loadImage('assets/zamazenta_front.png');
+
+  pidg_back = loadImage('assets/pidgey_back.png'); // pidgey
+  pidg_front = loadImage('assets/pidgey_front.png');
+
+  rat_back = loadImage('assets/rattata_back.png'); // rattata
+  rat_front = loadImage('assets/rattata_front.png'); 
+
+  zub_back = loadImage('assets/zubat_back.png'); // zubat
+  zub_front = loadImage('assets/zubat_front.png');
+
+  fen_back = loadImage('assets/fennekin_back.png'); // fennekin
+  fen_front = loadImage('assets/fennekin_front.png');
+
+  mud_back = loadImage('assets/mudkip_back.png'); // mudkip
+  mud_front = loadImage('assets/mudkip_front.png');
+
+  munch_back = loadImage('assets/munchlax_back.png'); // munchlax
+  munch_front = loadImage('assets/munchlax_front.png');
+
+  mac_back = loadImage('assets/machop_back.png'); // machop
+  mac_front = loadImage('assets/machop_front.png');
+
+  lap_back = loadImage('assets/lapras_back.png'); // lapras
+  lap_front = loadImage('assets/lapras_front.png');
+
+  arca_back = loadImage('assets/arcanine_back.png'); // arcanine
+  arca_front = loadImage('assets/arcanine_front.png');
+
+  bee_back = loadImage('assets/beedrill_back.png'); // beedrill
+  bee_front = loadImage('assets/beedrill_front.png');
+
+  muk_back = loadImage('assets/muk_back.png'); // muk
+  muk_front = loadImage('assets/muk_front.png');
+
+  onix_back = loadImage('assets/onix_back'); // onix
+  onix_front = loadImage('assets/onix_front');
+}
 
 function draw() {
   loadBackGround();
@@ -263,7 +300,6 @@ class Bromon {
 
 
 }
-
 
 // text box
 function textBox(theText) {
