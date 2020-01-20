@@ -11,6 +11,13 @@ let state = "menu"
 let bromon;
 let pokeName;
 
+let enemy;
+let enemyHealth;
+
+let player;
+let playerHealth;
+let playerTurn;
+
 
 function setup() {
 
@@ -19,8 +26,6 @@ function setup() {
 
   console.log(windowHeight);
   console.log(windowWidth);
-
-
 }
 
 // Load sprites
@@ -70,7 +75,7 @@ function preload(){
 }
 
 function draw() {
-  loadBackGround();
+  displayBackGround();
 
   // position of Bromon in battle
   rectMode(CENTER);
@@ -81,6 +86,12 @@ function draw() {
   imageMode(CENTER);
   //image(img, 1.4*(width/2), 1.07*(height/4), 130, 100); // bulbasaur 
   //image(img2, 0.45*(width/2), 1.21*(height/2), 250, 195); // zamazenta
+
+
+  // if (player.health && enemy.health > 0){
+
+  // }
+
 
   if (state === "menu") {
     fightOptionBorder();
@@ -109,7 +120,7 @@ function draw() {
   }
 }
 
-function loadBackGround() {
+function displayBackGround() {
   // border at the bottom
   displayBattle();
   displayBattleStats();
@@ -278,12 +289,13 @@ function displayBattleStats() {
 class Bromon {
 
   // stats, level, type(need to have)
-  constructor(name, sprite, moves, health, size) {
+  constructor(name, sprite, moves, health, size, bromonHealth) {
     this.name = name;
     this.sprite = sprite;
     this.moves = moves;
     this.health = health;
     this.size = size;
+    this.bromonHealth = bromonHealth;
   }
 
 
@@ -300,6 +312,7 @@ class Bromon {
 
 
 }
+
 
 // text box
 function textBox(theText) {
