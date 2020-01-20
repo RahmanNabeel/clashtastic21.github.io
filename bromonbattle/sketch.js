@@ -91,8 +91,7 @@ function draw() {
   // if (player.health && enemy.health > 0){
 
   // }
-
-
+  
   if (state === "menu") {
     fightOptionBorder();
     displayWords();
